@@ -12,10 +12,10 @@ FeY-OS is a minimal operating system that boots from GRUB:
 ## 🔥 Focus: Building a Minimal x86 (32-bit) Operating System  
 The goal of FeY-OS is to create a **lightweight, minimalistic operating system** with core functionality, including: 
 
-- 
+ 
 - Be able to **dual boot with any existing OS**
 - A simple **networking interface**  
-- To impliment  **A web engine without javascript **  
+- To impliment  ** A web engine without javascript **  
 - Basic **GUI** (planned)  
 - Support for **user-space applications** (future goal)  
 

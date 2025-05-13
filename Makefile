@@ -6,12 +6,15 @@ LDPARAMS  = -melf32_i386
 # ASPARAMS = --64
 # LDPARAMS = -melfx86_64
 
-objects   = loader.o gdt.o port.o interupts.o interuptstubs.o kernel.o
+objects   = loader.o gdt.o port.o interrupts.o interruptstubs.o kernel.o
 
-%.o: src/%.cpp
+%.o: kernel/hardwc/%.cpp
+	gcc $(GCCPARAMS) -o $@ -c $<
+	
+%.o: kernel/%.cpp
 	gcc $(GCCPARAMS) -o $@ -c $<
 
-%.o: src/%.s
+%.o: kernel/hardwc/%.s
 	as $(ASPARAMS) -o $@ $<
 
 feykernel.bin: linker.ld $(objects)
@@ -32,9 +35,11 @@ feykernel.iso: feykernel.bin
 	echo '}' >> iso/boot/grub/grub.cfg
 	grub-mkrescue --output=$@ iso
 	
-
+.PHONY: clean
 clean:
 	rm -rf iso feykernel.bin $(objects)
+	
 
-clean-iso: clean
+.PHONY: clean-all
+clean-all: clean
 	rm -rf feykernel.iso    
