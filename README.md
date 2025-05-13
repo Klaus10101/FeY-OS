@@ -65,12 +65,3 @@ qemu-system-i386 -cdrom feykernel.iso
 ```
 
 or you can use virtual box.
-
-## 🚀 Running on Real Hardware
-
-To run FeY-OS on a physical machine, burn the ISO to a USB drive:
-```
-sudo dd if=feykernel.iso of=/dev/sdX bs=4M status=progress && sync
-```
-
-Replace /dev/sdX with the correct USB device.
