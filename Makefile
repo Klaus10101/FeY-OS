@@ -17,10 +17,11 @@ objects   = loader.o gdt.o port.o interrupts.o interruptstubs.o kernel.o
 %.o: kernel/hardwc/%.s
 	as $(ASPARAMS) -o $@ $<
 
+.PHONY: feykernel.bin
 feykernel.bin: linker.ld $(objects)
 	ld$( LDPARAMS) -T $< -o $@ $(objects)
 
-
+.PHONY: feykernel.iso
 feykernel.iso: feykernel.bin
 	mkdir iso
 	mkdir iso/boot

@@ -1,6 +1,10 @@
+# .txt files---
+*.txt
+
 # .object files---
 *.o
 *.obj
 
 # .bin files---
 *.bin
+
