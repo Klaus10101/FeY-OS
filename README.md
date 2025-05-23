@@ -15,7 +15,7 @@ The goal of FeY-OS is to create a **lightweight, minimalistic operating system**
  
 - Be able to **dual boot with any existing OS**
 - A simple **networking interface**  
-- To impliment  ** A web engine without javascript **  
+- To impliment  **A web engine without javascript**  
 - Basic **GUI** (planned)  
 - Support for **user-space applications** (future goal)  
 
@@ -32,10 +32,7 @@ The goal of FeY-OS is to create a **lightweight, minimalistic operating system**
 - [x] Simple kernel that prints a message  
 - [ ] Implementing system calls  
 - [ ] Adding keyboard input support  
-- [ ] Expanding the kernel functionality  
-
-## 📥 Prebuilt ISO  
-A prebuilt ISO is available in th repo.  
+- [ ] Expanding the kernel functionality    
 
 ## 🛠️ Building From Source  
 
@@ -50,17 +47,17 @@ To build FeY-OS, you need the following packages:
 
 #### **Installing Dependencies (Debian-based systems)**  
 Run the following command to install all required dependencies:  
-```sh
+```bash
 sudo apt update && sudo apt install build-essential grub-pc-bin xorriso nasm gcc-multilib
 ```
 #### Build Instructions
 
 To build Fey-OS in the project directory, simply run:
-```
+```bash
 make feykernel.iso
 ```
 This will generate feykernel.iso, which can be booted using an emulator like QEMU:
-```
+```bash
 qemu-system-i386 -cdrom feykernel.iso
 ```
 
