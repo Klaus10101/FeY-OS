@@ -37,7 +37,7 @@ GlobalDescriptorTable::SegmentDescriptor::SegmentDescriptor(uint32_t base, uint3
 {
 	uint8_t* target = (uint8_t*)this;
 
-	if(limit <= 65536)
+	if(limit <= (64 * 1024))
 	{
 		target[6] = 0x40;
 	}
