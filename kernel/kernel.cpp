@@ -2,6 +2,8 @@
 #include "hardwc/types.h"
 #include "hardwc/gdt.h"
 #include "hardwc/interrupts.h"
+#include "hardwc/bool.h"
+
 
 void printf(char* string){         
 
