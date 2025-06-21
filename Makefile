@@ -10,6 +10,9 @@ objects   = loader.o gdt.o port.o interrupts.o interruptstubs.o kernel.o
 
 %.o: kernel/hardwc/%.cpp
 	gcc $(GCCPARAMS) -o $@ -c $<
+
+%.o: kernel/hardwc/bool/%.cpp
+	gcc $(GCCPARAMS) -o $@ -c $< 
 	
 %.o: kernel/%.cpp
 	gcc $(GCCPARAMS) -o $@ -c $<
@@ -19,7 +22,7 @@ objects   = loader.o gdt.o port.o interrupts.o interruptstubs.o kernel.o
 
 .PHONY: feykernel.bin
 feykernel.bin: linker.ld $(objects)
-	ld$( LDPARAMS) -T $< -o $@ $(objects)
+	ld $( LDPARAMS) -T $< -o $@ $(objects)
 
 .PHONY: feykernel.iso
 feykernel.iso: feykernel.bin
