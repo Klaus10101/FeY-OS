@@ -1,6 +1,8 @@
 
 # FeY-OS  
 
+> [!Warning]
+> This sofware is unfinished
 
 FeY-OS is a minimal operating system that boots from GRUB:  
  ![License](https://img.shields.io/badge/license-BSD-green.svg)
